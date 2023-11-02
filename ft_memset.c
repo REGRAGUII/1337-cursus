@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:25:26 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/02 16:41:35 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:46:22 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void *ft_memset(void *b, int c, size_t len)
 	char *str;
 
 	str = b;
+	i = 0;
 	while(i < n)
 	{
 		str[i] = b;
 	}
-	return (&str);
+	return (&str[0]);
 }
