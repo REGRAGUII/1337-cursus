@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:25:26 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/03 18:06:30 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:13:11 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	str = b;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
 		str[i] = b;
 	}
