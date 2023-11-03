@@ -6,13 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:27:57 by yregragu          #+#    #+#             */
-/*   Updated: 2023/10/31 23:34:45 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:49:19 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int x)
+int	ft_isdigit(int x)
 {
 	if (x >= 48 && x <= 57)
 		return (1);
