@@ -6,20 +6,20 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:25:26 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/02 16:46:22 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:06:30 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    size_t	i;
-	char *str;
+	size_t	i;
+	char	*str;
 
 	str = b;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		str[i] = b;
 	}

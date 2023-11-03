@@ -1,6 +1,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+
 int	ft_tolower(int x);
 int	ft_isalnum(int x);
 int	ft_isalpha(int x);
