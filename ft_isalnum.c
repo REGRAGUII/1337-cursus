@@ -6,13 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:27:00 by yregragu          #+#    #+#             */
-/*   Updated: 2023/10/31 23:09:57 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/04 14:05:12 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int x)
+int	ft_isalnum(int x)
 {
 	if (ft_isdigit == 1 || ft_isalpha == 1)
 		return (1);

@@ -6,15 +6,15 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:26:49 by yregragu          #+#    #+#             */
-/*   Updated: 2023/10/31 23:09:55 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/04 14:05:43 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int x)
+int	ft_tolower(int x)
 {
-    if (x >= 65 && x <= 90)
-        return (x + 32);
-    return (x);
+	if (x >= 65 && x <= 90)
+		return (x + 32);
+	return (x);
 }

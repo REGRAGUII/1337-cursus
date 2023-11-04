@@ -6,15 +6,15 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:27:06 by yregragu          #+#    #+#             */
-/*   Updated: 2023/10/31 23:09:58 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/04 14:04:49 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int x)
+int	ft_isascii(int x)
 {
-    if (x <= 0 && x >= 127)
-        return (1);
-    return (0);
+	if (x <= 0 && x >= 127)
+		return (1);
+	return (0);
 }
