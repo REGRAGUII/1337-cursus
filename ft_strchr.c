@@ -6,14 +6,14 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:43:44 by ryuuk_reg         #+#    #+#             */
-/*   Updated: 2023/11/05 17:58:01 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/05 22:09:30 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char	*ft_strchr(const char *s, int c)
- {
+char	*ft_strchr(const char *s, int c)
+{
 	while (*s != (char)c)
 	{
 		if (*s == '\0')
@@ -21,5 +21,4 @@
 		s++;
 	}
 	return ((char *)s);
- }
- 
+}

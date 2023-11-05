@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:08:11 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/04 14:05:22 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/05 22:27:51 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_bzero(void *s, size_t n)
 {
 	while (n--)
-		*((unsigned char*)(s + n)) = 0;
+		*((unsigned char *)(s + n)) = 0;
 }

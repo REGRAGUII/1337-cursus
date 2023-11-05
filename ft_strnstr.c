@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 16:27:49 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/05 22:28:55 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/05 18:44:24 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/05 18:45:50 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	len;
-
-	len = ft_strlen(s);
-	while (len-- > 0)
-	{
-		if (*(s + len) == (char)c)
-			return ((char *)(s + len));
-	}
-	return (0);
+	
 }

@@ -6,18 +6,18 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:27:14 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/04 14:03:15 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/05 22:10:21 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    size_t  x;
+	size_t	x;
 
-    x = 0;
-    while (s[x])
-        x++;
-    return (x);
+	x = 0;
+	while (s[x])
+		x++;
+	return (x);
 }
