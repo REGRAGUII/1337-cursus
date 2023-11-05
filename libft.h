@@ -21,6 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 
 char	*ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 size_t	ft_strlen(const char *s);
 
