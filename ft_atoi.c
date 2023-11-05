@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 16:27:49 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/05 23:42:22 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/06 00:54:33 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_atoi(const char *nptr)
 {
-	int	len;
+	int	x;
+	int	sg;
+	int	rs;
 
-	len = ft_strlen(s);
-	while (len-- > 0)
+	x = 0;
+	sg = 1;
+	rs = 0;
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-')
 	{
-		if (*(s + len) == (char)c)
-			return ((char *)(s + len));
+		sg = -1;
+		nptr++;
 	}
-	return (0);
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr)
+	{
+		if (*nptr >= '0' && *nptr <= '9')
+			rs = rs * 10 + *nptr - '0';
+		else
+			break ;
+		nptr++;
+	}
+	return (sg * rs);
 }
