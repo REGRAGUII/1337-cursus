@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:30:19 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/06 20:44:18 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/06 21:00:44 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,6 @@ char	*ft_strdup(const char *s1)
 		dup++;
 		s1++;
 	}
-	dup = '\0';
+	*dup = '\0';
 	return (dup);
 }
-    int main()
-	{
-    char s[] = "hello youssef";
-    printf("%s\n", *ft_strdup(s));
-    printf("%s", *strdup(s));
-    
-      return 0;
-	}
