@@ -6,12 +6,11 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:30:19 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/06 21:00:44 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/06 21:01:31 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strdup(const char *s1)
 {
