@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 15:25:26 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/06 17:33:22 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/06 17:30:19 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/06 18:50:23 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*strdup(const char *s1)
 {
-	while (len--)
-		*((unsigned char *)(b + len)) = (unsigned char) c;
-	return (b);
+	char	*dup;
+	size_t	x;
+
+	dup = malloc(sizeof(char) * (ft_strlen(s1) + 1))
+	if (!dup)
+		return (0)
+	while (*s1 != '\0')
+	{
+		*dup = *s1;
+		dup++;
+		s1++;
+	}
+	dup = '\0';
+	return (dup);
 }
