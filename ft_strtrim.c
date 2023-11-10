@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/08 12:26:45 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/09 15:23:02 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/10 14:09:51 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
-{
-	int	x;
-	int	sg;
-	int	rs;
 
-	x = 0;
-	sg = 1;
-	rs = 0;
-	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int	i;
+	int	x;
+	int	y;
+
+	i = 0;
+	while (set[i])
 	{
-		sg = -1;
-		nptr++;
+		if (s1[i] == set[i])
+			i++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr)
+	x = i;
+	i = ft_strlen(s1) - 1;
+	while (i > 0)
 	{
-		if (*nptr >= '0' && *nptr <= '9')
-			rs = rs * 10 + *nptr - '0';
-		else
-			break ;
-		nptr++;
+		if (s1[i] == set[i])
+			i--;
 	}
-	return (sg * rs);
+	y = i;
+	
 }

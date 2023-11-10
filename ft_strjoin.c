@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/08 12:26:45 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/09 12:54:23 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/09 15:21:59 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	x;
-	int	sg;
-	int	rs;
+	size_t	len01;
+	size_t	len02;
+	char	*s;
 
-	x = 0;
-	sg = 1;
-	rs = 0;
-	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
+	len01 = ft_strlen(s1);
+	len02 = ft_strlen(s2);
+	s = malloc (sizeof(char) * (len01 + len02 + 1));
+	while (*s1 && s1)
 	{
-		sg = -1;
-		nptr++;
+		*s = *s1;
+		s++;
+		s1++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr)
+	while (*s2 && s2)
 	{
-		if (*nptr >= '0' && *nptr <= '9')
-			rs = rs * 10 + *nptr - '0';
-		else
-			break ;
-		nptr++;
+		*s = *s2;
+		s++;
+		s2++;
 	}
-	return (sg * rs);
+	*s = '\0';
+	return (s);
 }

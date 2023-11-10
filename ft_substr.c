@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/08 12:26:45 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/07 17:36:49 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/09 12:59:21 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	x;
-	int	sg;
-	int	rs;
+	unsigned int	i;
+	char			*sub;
 
-	x = 0;
-	sg = 1;
-	rs = 0;
-	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
+	i = 0;
+	if (!s)
+		return (0);
+	if (start >= ft_strlen(s))
+		len = 0;
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
+	sub = malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (0);
+	while (i < len)
 	{
-		sg = -1;
-		nptr++;
+		sub[i] = s[start++];
+		i++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr)
-	{
-		if (*nptr >= '0' && *nptr <= '9')
-			rs = rs * 10 + *nptr - '0';
-		else
-			break ;
-		nptr++;
-	}
-	return (sg * rs);
+	sub[i] = '\0';
+	return (sub);
 }
