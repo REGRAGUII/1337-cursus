@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/08 12:26:45 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:08:58 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	x;
 	int	sg;
 	int	rs;
 
-	x = 0;
 	sg = 1;
 	rs = 0;
 	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))

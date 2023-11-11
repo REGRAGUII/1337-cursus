@@ -41,15 +41,15 @@ OBJS = $(SRCS:%.c=%.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-        ar rc $(NAME) $(OBJS)
+		ar rc $(NAME) $(OBJS)
 
 %.o : %.c $(INC)
-        $(CC) -c $(CFLAGS) $< -o $@
+		$(CC) -c $(CFLAGS) $< -o $@
 
 clean :
-        rm -rf $(OBJS)
+		rm -rf $(OBJS)
 
 fclean : clean 
-        rm -rf $(NAME)
+		rm -rf $(NAME)
 
 re : fclean all
