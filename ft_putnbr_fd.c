@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:40:33 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/22 16:26:15 by ryuuk_reg        ###   ########.fr       */
+/*   Created: 2023/11/19 01:31:46 by ryuuk_reg         #+#    #+#             */
+/*   Updated: 2023/11/21 18:38:06 by ryuuk_reg        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_min(size_t x, size_t y)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (x < y)
-		return (x);
-	return (y);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + 48, fd);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:42:15 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/11 18:46:28 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/19 01:32:39 by ryuuk_reg        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
 
 # endif

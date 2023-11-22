@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:40:33 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/22 16:26:15 by ryuuk_reg        ###   ########.fr       */
+/*   Created: 2023/11/16 13:22:08 by ryuuk_reg         #+#    #+#             */
+/*   Updated: 2023/11/19 01:30:02 by ryuuk_reg        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_min(size_t x, size_t y)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (x < y)
-		return (x);
-	return (y);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	
+	if (s)
+	{
+		while (*s)
+			write(fd, s++, 1);
+		write(fd, "\n", 1);
+	}
 }
