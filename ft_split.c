@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:32:08 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/23 20:49:54 by ryuuk_reg        ###   ########.fr       */
+/*   Created: 2023/11/24 19:20:38 by ryuuk_reg         #+#    #+#             */
+/*   Updated: 2023/11/25 16:07:41 by ryuuk_reg        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+static	size_t	tokenizer(char *s)
 {
-	size_t	srclen;
-	size_t		x;
-
-	x = 0;
-	srclen = ft_strlen((char *) src);
-	if(size)
-	{
-		while (src[x] && x < size - 1)
-		{
-			dst[x] = src[x];
-			x++;
-		}
-		dst[x] = '\0';
-	}
-	return (srclen);
+	
+}
+char	**ft_split(char const *s, char c)
+{
+	
 }

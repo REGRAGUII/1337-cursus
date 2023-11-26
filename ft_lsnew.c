@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lsnew.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:32:08 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/23 20:49:54 by ryuuk_reg        ###   ########.fr       */
+/*   Created: 2023/11/26 20:48:24 by ryuuk_reg         #+#    #+#             */
+/*   Updated: 2023/11/26 21:15:07 by ryuuk_reg        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	srclen;
-	size_t		x;
-
-	x = 0;
-	srclen = ft_strlen((char *) src);
-	if(size)
-	{
-		while (src[x] && x < size - 1)
-		{
-			dst[x] = src[x];
-			x++;
-		}
-		dst[x] = '\0';
-	}
-	return (srclen);
+	t_list	*new;
+	
+	new = malloc(sizeof(t_list))
+	if (!new)
+		return (NULL);
+	new->next = NULL;
+	new->content = content;
+	return (new);
 }

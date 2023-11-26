@@ -3,42 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:23:02 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/11 14:56:36 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/11/24 19:38:28 by ryuuk_reg        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
 	int	start;
 	int	end;
+	char	*str;
 
-	i = 0;
-	while (set[i] && )
-	{
-		if (s1[i] == set[i])
-			i++;
-	}
-	x = i;
-	i = ft_strlen(s1) - 1;
-	while (i > 0)
-	{
-		if (s1[i] == set[i])
-			i--;
-	}
-	y = i;
-	sub = ft_substr(s1, x, y);
-	return (sub);
-}
-
-int main ()
-{
-	printf("%s", ft_strtrim("//hello/", "/"));
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[start]) && start <= end)
+		start++;
+	if (start > end)
+		return (ft_strdup(s1 + end + 1));
+	while (ft_strchr(set, s1[end]) && end >= 0)
+		end--;
+	str = ft_substr(s1, start, end - start + 2);
+	return (str);
 }
