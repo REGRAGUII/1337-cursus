@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:45:14 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/30 12:30:21 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:41:31 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    if (!lst)
-		return;
-	del (del)
-		del(lst->content);
+	if (!lst)
+		return ;
+	if (del)
+		del (lst->content);
 	free (lst);
 }

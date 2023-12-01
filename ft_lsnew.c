@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 20:48:24 by ryuuk_reg         #+#    #+#             */
-/*   Updated: 2023/11/30 14:33:46 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:50:40 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
-	
-	new = malloc(sizeof(t_list))
+
+	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
 	new->next = NULL;

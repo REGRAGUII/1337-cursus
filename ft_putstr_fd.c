@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:45:57 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/30 10:43:35 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:43:22 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-    if (s)
+	if (s)
 	{
 		while (*s)
 			write(fd, s++, 1);

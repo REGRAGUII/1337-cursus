@@ -6,15 +6,15 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 22:02:49 by ryuuk_reg         #+#    #+#             */
-/*   Updated: 2023/11/30 10:41:20 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:37:55 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list  *t_lstlast(t_list *lst)
+t_listi	*t_lstlast(t_list *lst)
 {
-    if (!lst)
-        return (NULL);
-    while(lst->next)
-        lst = lst->next;
-    return (lst);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
