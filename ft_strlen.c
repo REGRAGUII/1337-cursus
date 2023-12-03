@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:27:14 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/09 13:25:54 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:36:37 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	x;
 
 	x = 0;
-	while (s && s[x])
+	while (s[x])
 		x++;
 	return (x);
 }
