@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 22:02:49 by ryuuk_reg         #+#    #+#             */
-/*   Updated: 2023/12/01 15:37:55 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:18:46 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_listi	*t_lstlast(t_list *lst)
+#include "libft.h"
+
+t_list	*t_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
