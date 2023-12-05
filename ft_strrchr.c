@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:27:49 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/05 23:42:22 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:23:17 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	char	*re;
+	int		i;
 
-	len = ft_strlen(s);
-	while (len-- > 0)
+	re = NULL;
+	i = 0;
+	while (s[i])
 	{
-		if (*(s + len) == (char)c)
-			return ((char *)(s + len));
+		if (s[i] == (char)c)
+			re = (char *)&s[i];
+		i++;
 	}
-	return (0);
+	if ((char)c == '\0')
+		re = (char *)&s[i];
+	return (re);
 }

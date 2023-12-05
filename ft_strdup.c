@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:30:19 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/11 17:12:27 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:44:09 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*dup;
+	size_t	x;
 
+	x = 0;
 	dup = malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!dup)
 		return (0);
-	while (*s1 != '\0')
+	while (s1[x] != '\0')
 	{
-		*dup = *s1;
-		dup++;
-		s1++;
+		dup[x] = s1[x];
+		x++;
 	}
-	*dup = '\0';
+	dup[x] = '\0';
 	return (dup);
 }

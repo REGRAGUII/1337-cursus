@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:53 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/04 18:05:08 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:45:17 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int	i;
 
 	i = 0;
-	if (*s && f)
+	while (s && s[i])
 	{
-		while (*s)
-			f(i, &s[i]);
-			i++;
+		f(i, &s[i]);
+		i++;
 	}
 }

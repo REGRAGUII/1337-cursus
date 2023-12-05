@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:26:00 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/04 18:36:45 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:54:12 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*temp;
 
 	temp = *lst;
-	if(!lst || !del)
+	if (!lst || !del)
 		return ;
 	while (temp)
 	{
@@ -26,5 +26,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(temp);
 		temp = *lst;
 	}
-	*lst =	NULL;
+	*lst = NULL;
 }
