@@ -6,13 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 19:20:38 by ryuuk_reg         #+#    #+#             */
-/*   Updated: 2023/12/04 17:55:00 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/05 23:19:55 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	wrds_count(const char *str, char sep)
+static	int	tokenizer(const char *str, char sep)
 {
 	int	i;
 	int	count;
@@ -37,7 +37,7 @@ static	char	*wrd_malloc(const char *str, char sep)
 {
 	int		i;
 	char	*word;
-
+ 
 	i = 0;
 	while (str && str[i] && str[i] != sep)
 		i++;
@@ -48,7 +48,7 @@ static	char	*wrd_malloc(const char *str, char sep)
 	return (word);
 }
 
-static	char	**remove_leaks(char **buff)
+static	char	**free_mem(char **buff)
 {
 	int	i;
 
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	buff = (char **)malloc(sizeof(char *) * (wrds_count(s, c) + 1));
+	buff = (char **)malloc(sizeof(char *) * (tokenizer(s, c) + 1));
 	if (!buff)
 		return (NULL);
 	while (s && s[i])
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		{
 			buff[j] = wrd_malloc(s + i, c);
 			if (!buff[j])
-				return (remove_leaks(buff));
+				return (free_mem(buff));
 			j++;
 			while (s[i] != c && s[i])
 				i++;

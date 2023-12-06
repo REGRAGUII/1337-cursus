@@ -6,12 +6,11 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:44:24 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/05 21:15:39 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/05 21:17:23 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
