@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:23:02 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/05 18:43:35 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:57:21 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (start >= ft_strlen(s1))
 		return ((char *)ft_calloc(sizeof(char), 1));
 	i = ft_strlen(s1) - 1;
-	while (i && s1[i] && ft_strchr(set, s1[i]))
+	while (s1[i] && ft_strchr(set, s1[i]))
 		end = (i--) - 1;
 	return (ft_substr(s1, start, (end - start + 1)));
 }

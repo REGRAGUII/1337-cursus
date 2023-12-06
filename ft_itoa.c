@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:19:36 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/04 17:53:12 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:01:20 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,22 +61,22 @@ static	char	*ft_isnegative(long n, int lenth)
 
 char	*ft_itoa(int n)
 {
-	int		lenth;
+	int		length;
 	char	*str;
 
-	lenth = ft_count(n);
+	length = ft_count(n);
 	if (n <= 0)
-		return (ft_isnegative((long)n, lenth));
-	str = malloc((sizeof(char) * lenth) + 1);
+		return (ft_isnegative((long)n, length));
+	str = malloc((sizeof(char) * length) + 1);
 	if (!str)
 		return (NULL);
-	str[lenth] = '\0';
-	lenth--;
+	str[length] = '\0';
+	length--;
 	while (n)
 	{
-		str[lenth] = n % 10 + 48;
+		str[length] = n % 10 + 48;
 		n = n / 10;
-		lenth--;
+		length--;
 	}
 	return (str);
 }

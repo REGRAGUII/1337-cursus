@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 19:20:38 by ryuuk_reg         #+#    #+#             */
-/*   Updated: 2023/12/05 23:19:55 by yregragu         ###   ########.fr       */
+/*   Created: 2023/12/06 18:37:16 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/06 18:37:41 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static	char	*wrd_malloc(const char *str, char sep)
 {
 	int		i;
 	char	*word;
- 
+
 	i = 0;
 	while (str && str[i] && str[i] != sep)
 		i++;

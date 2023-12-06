@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:54:23 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/05 20:42:02 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:30:42 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	s = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s)
-		return (NULL);
+		return (0);
 	while (s1[x])
 	{
 		s[x] = s1[x];

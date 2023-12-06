@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:36:49 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/30 14:56:43 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:44:47 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	while (i < len)
 	{
-		sub[i] = s[start++];
-		i++;
+		sub[i++] = s[start++];
 	}
 	sub[i] = '\0';
 	return (sub);

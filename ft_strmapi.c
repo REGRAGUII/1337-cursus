@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 16:53:40 by yregragu          #+#    #+#             */
-/*   Updated: 2023/11/11 17:56:28 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:19:22 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*dup;
 	int		l;
 
-	l = ft_strlen(s);
 	if (!s || !f)
 		return (0);
+	l = ft_strlen(s);
 	dup = malloc(sizeof(char) * (l + 1));
 	if (!dup)
 		return (0);
