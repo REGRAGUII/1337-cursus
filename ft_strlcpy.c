@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:32:08 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/01 15:24:43 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/07 23:49:45 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	x;
 
 	x = 0;
+
+
 	srclen = ft_strlen((char *) src);
 	if (size)
 	{
