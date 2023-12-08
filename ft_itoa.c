@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:19:36 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/06 19:01:20 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/08 13:22:34 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_count(int n)
 	return (count);
 }
 
-static	char	*ft_isnegative(long n, int lenth)
+static	char	*ft_isnegative(long n, int length)
 {
 	char	*str;
 
@@ -44,17 +44,17 @@ static	char	*ft_isnegative(long n, int lenth)
 		return (str);
 	}
 	n *= -1;
-	str = (char *)malloc(sizeof(char) * lenth + 1);
+	str = (char *)malloc(sizeof(char) * length + 1);
 	if (!str)
 		return (NULL);
 	str[0] = '-';
-	str[lenth] = '\0';
-	lenth--;
+	str[length] = '\0';
+	length--;
 	while (n)
 	{
-		str[lenth] = n % 10 + 48;
+		str[length] = n % 10 + 48;
 		n = n / 10;
-		lenth--;
+		length--;
 	}
 	return (str);
 }
