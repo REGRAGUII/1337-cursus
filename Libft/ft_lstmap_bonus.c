@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:32:08 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/07 23:49:45 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/30 17:43:51 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/09 15:36:11 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	srclen;
-	size_t	x;
+	t_list	*new_lst;
+	t_list	*ele;
 
-	x = 0;
-
-
-	srclen = ft_strlen((char *) src);
-	if (size)
+	new_lst = NULL;
+	while (lst && f)
 	{
-		while (src[x] && x < size - 1)
+		ele = ft_lstnew(f(lst->content));
+		if (!ele)
 		{
-			dst[x] = src[x];
-			x++;
+			ft_lstclear(&new_lst, del);
+			return (NULL);
 		}
-		dst[x] = '\0';
+		ft_lstadd_back(&new_lst, ele);
+		lst = lst->next;
 	}
-	return (srclen);
+	return (new_lst);
 }

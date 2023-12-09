@@ -6,9 +6,11 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:53 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/05 18:45:17 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:07:53 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

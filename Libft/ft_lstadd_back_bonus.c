@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 21:02:36 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/04 17:52:47 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/30 10:41:09 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/09 15:07:22 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	void	*x;
+	t_list	*temp;
 
-	x = malloc(size * nmemb);
-	if (!x)
-		return (0);
-	ft_bzero(x, size * nmemb);
-	return (x);
-}
-
-/*#include <stdio.h>
-int main()
-{
-	char *str = ft_calloc(4,1);
-	int	i = 0;
-	
-	while(i < 4)
+	temp = *lst;
+	if (!temp)
 	{
-		printf("%d", str[i]);
-		i++;
+		*lst = new;
+		return ;
 	}
-}*/
+	while (temp)
+	{
+		if (temp->next)
+			temp = temp->next;
+		else
+		{
+			temp->next = new;
+			return ;
+		}
+	}
+}

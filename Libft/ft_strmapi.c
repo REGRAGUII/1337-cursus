@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 15:55:35 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/07 22:48:29 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/11 16:53:40 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/08 10:50:23 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (!dest && !src)
+	char	*dup;
+	int		l;
+
+	if (!s || !f)
 		return (0);
-	if (dest < src)
-		return (ft_memcpy(dest, src, n));
-	while (n--)
-		*((char *)(dest + n)) = *((char *)(src + n));
-	return (dest);
+	l = ft_strlen(s);
+	dup = malloc(sizeof(char) * (l + 1));
+	if (!dup)
+		return (0);
+	l = 0;
+	while (s[l])
+	{
+		dup[l] = f(l, s[l]);
+		l++;
+	}
+	dup[l] = '\0';
+	return (dup);
 }

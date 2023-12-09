@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:58:55 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/07 19:21:10 by yregragu         ###   ########.fr       */
+/*   Created: 2023/12/09 18:27:40 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/09 18:28:02 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	while ((*s1 != '\0' || *s2 != '\0') && n > 0)
+	size_t	x;
+
+	x = 0;
+	while (lst)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		n--;
-		s1++;
-		s2++;
+		lst = lst->next;
+		x++;
 	}
-	return (0);
+	return (x);
 }
