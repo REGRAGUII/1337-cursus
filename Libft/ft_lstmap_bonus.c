@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 17:43:51 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/09 19:30:49 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:46:42 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*ele;
 
+	if (!lst || !f || !del)
+		return (NULL);
 	new_lst = NULL;
-	while (lst && f)
+	while (lst)
 	{
 		ele = ft_lstnew(f(lst->content));
 		if (!ele)
