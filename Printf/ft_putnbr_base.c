@@ -6,7 +6,27 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:22 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/20 16:01:23 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/21 18:36:17 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+void    ft_putnbr_base(unsigned int n, char c, int *len)
+{
+    unsigned int    base_len;
+    char *base;
+    
+    base_len = 16;
+    if (c == 'x')
+        base = "0123456789abcdef";
+    else
+        base = "0123456789ABCDEF";
+    if (n < base_len)
+    	ft_putchar(base[n % base_len], len);
+    else
+	{
+		ft_putnbr_base(n / base_len, c, len);
+        ft_putnbr_base(n % base_len, c, len);
+	}
+}

@@ -6,28 +6,30 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:32:45 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/20 18:26:25 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/21 22:41:30 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static void ft_flag_checker(va_list args, char c, int *len)
 {
 	if (c == '%')
-		ft_putchar(c, len)
+		ft_putchar(c, len);
 	else if (c == 'c')
-		ft_putchar(va_arg(args, int), *len);
+		ft_putchar(va_arg(args, int), len);
 	else if (c == 's')
-		ft_putstr(va_arg(args, char*), *len);
+		ft_putstr(va_arg(args, char*), len);
 	else if (c == 'u')
-		ft_putnbr(va_arg(args, unsigned int), *len);
+		ft_putnbr(va_arg(args, unsigned int), len);
 	else if (c == 'i' || c == 'd')
-		ft_putnbr(va_arg(args, int), *len);
+		ft_putnbr(va_arg(args, int), len);
 	else if (c == 'x' || c == 'X')
-		ft_putnbr_base(va_arg(args, unsigned int), *len);
+		ft_putnbr_base(va_arg(args, unsigned int), c,len);
 	else if (c == 'p')
-		ft_putnbr
+		ft_putstr("0x", len);
+		ft_putnbr_base(va_arg(args, unsigned long int), c,len);
+	
 }
 
 int ft_printf(const char *format, ...)
@@ -45,9 +47,15 @@ int ft_printf(const char *format, ...)
 			ft_flag_checker(args, *format, &len);
 		}
 		else
-			ft_putchar(*format);
+			ft_putchar(*format, &len);
 		format++;
     }
     va_end(args);
     return (len);
+}
+
+int main()
+{
+	char s = '%';
+	ft_printf("%c", s);
 }
