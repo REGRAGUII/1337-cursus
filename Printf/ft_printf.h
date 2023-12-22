@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:39:15 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/22 16:34:17 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:03:09 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_printf(const char *format, ...);
 void	ft_putchar(char c, int *len);
 void   	ft_putstr(char *s, int *len);
 void    ft_putnbr_base(unsigned long  n, char c, int *len);
-void	ft_putnbr(int n, int *len);
-
+void	ft_putnbr(long n, int *len);
 
 #endif

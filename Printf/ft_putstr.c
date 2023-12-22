@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:28 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/21 18:36:24 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:13:49 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void ft_putstr(char *s, int *len)
 {
-	if (s == NULL)
-		ft_putstr("null", len);
-	while (*s)
+	if (!s)
+		ft_putstr("(null)", len);
+	while (s && *s)
 	{
 		ft_putchar(*s, len);
 		s++;

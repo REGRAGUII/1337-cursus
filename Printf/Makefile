@@ -6,11 +6,11 @@
 #    By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/21 17:50:18 by yregragu          #+#    #+#              #
-#    Updated: 2023/12/21 18:33:57 by yregragu         ###   ########.fr        #
+#    Updated: 2023/12/22 19:03:03 by yregragu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -23,12 +23,12 @@ SRC = ft_printf.c \
 	   
 OBJEC = $(SRC:.c=.o)
 
-all : &(NAME)
+all : $(NAME)
 
-&(NAME) : &(OBJEC)
+$(NAME) : $(OBJEC)
 
 .c.o :
-	&(CC) &(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<
 	ar rcs $(NAME) $@
 
 clean :

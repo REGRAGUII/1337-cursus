@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:32:45 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/22 16:31:18 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:03:25 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void ft_flag_checker(va_list args, char c, int *len)
 {
 	if (c == '%')
-		ft_putchar(c, len);
+		ft_putchar('%', len);
 	else if (c == 'c')
 		ft_putchar(va_arg(args, int), len);
 	else if (c == 's')
@@ -29,20 +29,18 @@ static void ft_flag_checker(va_list args, char c, int *len)
 	else if (c == 'p')
 	{
 		ft_putstr("0x", len);
-		ft_putnbr_base(va_arg(args, unsigned long int), 'x',len);
+		ft_putnbr_base(va_arg(args, unsigned long int), c,len);
 	}
-	
+	else
+		ft_putchar(c, len);
 }
 
 int ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int	len;
-	int i = 0;
 
 	len = 0;
-	if (format[i] == '%' && format[i + 1])
-		return(0);
     va_start(args, format);
 	while (*format)
 	{
@@ -51,6 +49,8 @@ int ft_printf(const char *format, ...)
 			format++;
 			ft_flag_checker(args, *format, &len);
 		}
+		else if(!*format)
+			break;
 		else
 			ft_putchar(*format, &len);
 		format++;

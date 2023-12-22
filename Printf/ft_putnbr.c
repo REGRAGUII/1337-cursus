@@ -6,17 +6,15 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:27 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/22 16:14:35 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:46:54 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_putnbr(int n, int *len)
+void ft_putnbr(long n, int *len)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648", len);
-	else if (n < 0)
+	if (n < 0)
 	{
 		ft_putchar('-', len);
 		n *= -1;

@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:22 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/22 16:34:11 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:02:45 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void    ft_putnbr_base(unsigned long  n, char c, int *len)
     char *base;
     
     base_len = 16;
-    if (c == 'x')
+    if (c != 'p')
+        n = (unsigned int)n;
+    if (c == 'x' || c == 'p')
         base = "0123456789abcdef";
     else
         base = "0123456789ABCDEF";
