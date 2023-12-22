@@ -6,13 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:22 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/21 18:36:17 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:34:11 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putnbr_base(unsigned int n, char c, int *len)
+void    ft_putnbr_base(unsigned long  n, char c, int *len)
 {
     unsigned int    base_len;
     char *base;
