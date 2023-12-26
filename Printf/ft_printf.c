@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:32:45 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/26 15:02:42 by yregragu         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:47:13 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	ft_printf(const char *format, ...)
 			format++;
 			ft_flag_checker(args, *format, &len);
 		}
-		else if (!*format)
-			break ;
 		else
 			ft_putchar(*format, &len);
 		format++;
