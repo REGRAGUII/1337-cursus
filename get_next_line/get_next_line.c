@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:16:37 by yregragu          #+#    #+#             */
-/*   Updated: 2024/01/16 18:57:41 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/01/22 21:35:44 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*ft_rest(char *str)
 	if (!str)
 		return (NULL);
 	i = ft_new_line(str);
-	if (i != -)
+	if (i != -1)
 	{
 		tmp = ft_strdup(str + i + 1);
 		free (str);
@@ -55,12 +55,12 @@ static char	*ft_line(char *str)
 	if(ft_strlen(str) <= 0)
 		return (NULL);
 	check = ft_new_line(str);
-	if (check = -1)
+	if (check == -1)
 	{
 		line = ft_strdup(str);
 		return (line);
 	}
-	line = malloc(sizeof(char) *check +2);
+	line = malloc(sizeof(char) * check + 2);
 	if (!line)
 		return (NULL);
 	while (str[i] != '\n')
@@ -81,13 +81,14 @@ static char	*ft_read(int fd, char* str, char *buff)
 	i = 1;
 	while (i > 0 && ft_new_line(str) == -1)
 	{
-		i = read (fd, buff, BUFFER_SIZE);
+		i = read(fd, buff, BUFFER_SIZE);
 		if (i > 0)
 		{
 			buff[i] = '\0';
 			temp = ft_strjoin(str, buff);
 			free(str); 
 			str = temp;
+			// printf("tikchbila :%s", temp);
 		}
 	}
 	free (buff);
@@ -101,23 +102,38 @@ static char	*ft_read(int fd, char* str, char *buff)
 }
 
 char	*get_next_line(int fd)
-{
+{ 
 	static char	*str;
 	char	*line;
 	char	*buff;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = malloc(BUFFER_SIZE + 1)
+	buff = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buff)
 		return (NULL);
 	str = ft_read(fd, str, buff);
+	// printf("str :%s",str);
 	line = ft_line(str);
+			
 	str = ft_rest(str);
+	
 	return (line);
+	
 }
+
 
 int main()
 {
 
+	int fd = open("text.txt", O_RDONLY);
+	printf("%d",fd);
+	char *str = get_next_line(fd);
+	printf("%s",str);
+	char *str1 = get_next_line(fd);
+	printf("%s",str1);
+	char *str2 = get_next_line(fd);
+	printf("%s",str2);
+	char *str3 = get_next_line(fd);
+	printf("%s",str3);
 }
