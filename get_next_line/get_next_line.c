@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:16:37 by yregragu          #+#    #+#             */
-/*   Updated: 2024/01/22 21:35:44 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:06:18 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ static char	*ft_read(int fd, char* str, char *buff)
 			temp = ft_strjoin(str, buff);
 			free(str); 
 			str = temp;
-			// printf("tikchbila :%s", temp);
 		}
 	}
 	free (buff);

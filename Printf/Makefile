@@ -6,7 +6,7 @@
 #    By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/21 17:50:18 by yregragu          #+#    #+#              #
-#    Updated: 2023/12/22 19:03:03 by yregragu         ###   ########.fr        #
+#    Updated: 2024/02/09 23:05:50 by yregragu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ $(NAME) : $(OBJEC)
 .c.o :
 	$(CC) $(CFLAGS) -c $<
 	ar rcs $(NAME) $@
+
 
 clean :
 	rm -rf $(OBJEC)

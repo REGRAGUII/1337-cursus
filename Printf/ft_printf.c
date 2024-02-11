@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:32:45 by yregragu          #+#    #+#             */
-/*   Updated: 2023/12/26 18:47:13 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/02/09 22:51:02 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void	ft_flag_checker(va_list args, char c, int *len)
 	else if (c == 'i' || c == 'd')
 		ft_putnbr(va_arg(args, int), len);
 	else if (c == 'x' || c == 'X')
-		ft_putnbr_base(va_arg(args, unsigned long), c, len);
+		ft_putnbr_base(va_arg(args, long), c, len);
 	else if (c == 'p')
 	{
 		ft_putstr("0x", len);
-		ft_putnbr_base(va_arg(args, unsigned long int), c, len);
+		ft_putnbr_base(va_arg(args, long), c, len);
 	}
 	else
 		ft_putchar(c, len);

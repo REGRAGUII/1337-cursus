@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:36:58 by yregragu          #+#    #+#             */
-/*   Updated: 2024/01/22 23:27:13 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:16:31 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ size_t	ft_strlen(const char *c)
 // 	return (str);
 // }
 
-char	*ft_strjoin(char  *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	y;
 	size_t	x;
@@ -63,12 +63,12 @@ char	*ft_strjoin(char  *s1, char *s2)
 	s = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s)
 		return (0);
-	while (x <= ft_strlen(s1))
+	while (s1[x])
 	{
 		s[x] = s1[x];
 		x++;
 	}
-	while (y <= ft_strlen(s2))
+	while (s2[y])
 	{
 		s[x] = s2[y];
 		x++;
@@ -77,6 +77,7 @@ char	*ft_strjoin(char  *s1, char *s2)
 	s[x] = '\0';
 	return (s);
 }
+
 
 
 char *ft_strdup(char *s)
