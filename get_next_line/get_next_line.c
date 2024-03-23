@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:16:37 by yregragu          #+#    #+#             */
-/*   Updated: 2024/02/13 14:53:46 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/03/22 21:17:15 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static int	ft_new_line(char *str)
 {
-	int	i;
+	int	x;
 
-	i = 0;
-	while (str && str[i])
+	x = 0;
+	while (str && str[x])
 	{
-		if (str[i] == '\n')
-			return (i);
-		i++;
+		if (str[x] == '\n')
+			return (x);
+		x++;
 	}
 	return (-1);
 }
@@ -29,14 +29,14 @@ static int	ft_new_line(char *str)
 static char	*ft_rest(char *str)
 {
 	char	*tmp;
-	int		i;
+	int		x;
 
 	if (!str)
 		return (NULL);
-	i = ft_new_line(str);
-	if (i != -1)
+	x = ft_new_line(str);
+	if (x != -1)
 	{
-		tmp = ft_strdup(str + i + 1);
+		tmp = ft_strdup(str + x + 1);
 		free (str);
 		str = tmp;
 		return (str);
@@ -48,10 +48,10 @@ static char	*ft_rest(char *str)
 static char	*ft_line(char *str)
 {
 	char	*line;
-	int		i;
+	int		x;
 	int		check;
 	
-	i = 0;
+	x = 0;
 	if(ft_strlen(str) <= 0)
 		return (NULL);
 	check = ft_new_line(str);
@@ -63,36 +63,36 @@ static char	*ft_line(char *str)
 	line = malloc(sizeof(char) * check + 2);
 	if (!line)
 		return (NULL);
-	while (str[i] != '\n')
+	while (str[x] != '\n')
 	{
-		line[i] = str[i];
-		i++;
+		line[x] = str[x];
+		x++;
 	}
-	line[i] = '\n';
-	line[i+1] = '\0';
+	line[x] = '\n';
+	line[x+1] = '\0';
 	return (line);
 }
 
 static char	*ft_read(int fd, char* str, char *buff)
 {
 	char	*temp;
-	int		i;
+	int		x;
 
-	i = 1;
-	while (i > 0 && ft_new_line(str) == -1)
+	x = 1;
+	while (x > 0 && ft_new_line(str) == -1)
 	{
-		i = read(fd, buff, BUFFER_SIZE);
-		if (i > 0)
+		x = read(fd, buff, BUFFER_SIZE);
+		if (x > 0)
 		{
-			buff[i] = '\0';
+			buff[x] = '\0';
 			temp = ft_strjoin(str, buff);
 			free(str); 
 			str = temp;
-		}
-	}
+		}             
+	}        
 	free (buff);
 	buff = NULL;
-	if (i == -1)
+	if (x == -1)
 	{
 		free (str);
 		return (NULL);
@@ -112,27 +112,23 @@ char	*get_next_line(int fd)
 	if (!buff)
 		return (NULL);
 	str = ft_read(fd, str, buff);
-	// printf("str :%s",str);
-	line = ft_line(str);
-			
+	line = ft_line(str);			
 	str = ft_rest(str);
-	
 	return (line);
-	
 }
 
 
-int main()
-{
+// int main()
+// {
 
-	int fd = open("text.txt", O_RDONLY);
-	printf("%d",fd);
-	char *str = get_next_line(fd);
-	printf("%s",str);
-	char *str1 = get_next_line(fd);
-	printf("%s",str1);
-	char *str2 = get_next_line(fd);
-	printf("%s",str2);
-	char *str3 = get_next_line(fd);
-	printf("%s",str3);
-}
+// 	int fd = open("text.txt", O_RDONLY);
+// 	char *line;
+// 	line = get_next_line(fd);
+// 	while (line)
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 		line = get_next_line(fd);
+// 	}
+// 	close(fd);
+// }
