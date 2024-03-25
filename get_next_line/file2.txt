@@ -1,0 +1,10 @@
+1 For static variables declared outside any function, the static keyword restrains their scope to the file in which we declare them. 
+2 The functions in the same file following the global static variable’s declaration will be able to use it, 
+3 but we won’t be able to access it from another of the program’s files.
+4
+5 If we return to our previous example of the global variable across two files, 
+6 and if we transform the global in foo.c into a static, we will get compilation errors: 
+7 “undefined reference to ‘a'”. 
+8 This comes from the fact that we declare in main.c that there is an extern definition of a elsewhere in the program. 
+9 Except that a is a static variable, which means it is “invisible” to the compiler. Since it cannot find a valid definition of 
+10 the global variable a, the compiler returns an error. For the compiler, extern and static are exact opposites.

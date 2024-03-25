@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:12:54 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/22 17:34:18 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/03/24 00:26:48 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ char	*ft_strjoin(char *s1, char *s2)
 	
 	if (s1 || s2)
 	{
-		str = malloc(sizeof(char) * (len1 +len2) + 1)
+		str = malloc(sizeof(char) * (len1 +len2) + 1);
 		if (!str)
-			return (NULL):
+			return (NULL);
 		while (i < len1)
 		{
 			str[i] = s1[i];
-			i++:
+			i++;
 		}
 		len2 = 0;
 		while (i < len1 + ft_strlen(s2))
-			str[i++] = s2[len2++]
+			str[i++] = s2[len2++];
 		str[len1 + ft_strlen(s2)] = '\0';
 	}
 	return (str);

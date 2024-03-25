@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:16:37 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/22 21:17:15 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/03/24 00:48:48 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,17 +118,17 @@ char	*get_next_line(int fd)
 }
 
 
-// int main()
-// {
+int main()
+{
 
-// 	int fd = open("text.txt", O_RDONLY);
-// 	char *line;
-// 	line = get_next_line(fd);
-// 	while (line)
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 		line = get_next_line(fd);
-// 	}
-// 	close(fd);
-// }
+	int fd = open("text.txt", O_RDONLY);
+	char *line;
+	line = get_next_line(fd);
+	while (line)
+	{
+		printf("%s", line);
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+}
