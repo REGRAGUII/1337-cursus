@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 02:43:00 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/25 17:56:14 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/03/31 18:29:32 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*ft_rest(char *str)
 		tmp = ft_strdup(str + x + 1);
 		free(str);
 		str = tmp;
-		return (NULL);
+		return (str);
 	}
 	free(str);
 	return (NULL);
@@ -100,7 +100,7 @@ static char	*ft_read(int fd, char *str, char *buff)
 	return (str);
 }
 
-char	*get_next_line_bonus(fd)
+char	*get_next_line_bonus(int fd)
 {
 	static char	*str[OPEN_MAX];
 	char	*line;
@@ -125,20 +125,28 @@ int main()
 	char *line;
 
 	
-	fd = open("text.txt", O_RDONLY);
+	fd = open("mac.txt", O_RDONLY);
 	line = get_next_line_bonus(fd);
-	while (line)
-	{
-		printf("%s", line);
-		free(line);
-		line = get_next_line_bonus(fd);
-	}
+	printf("%s",line);
+
+	char *str = get_next_line_bonus(fd);
+	printf("%s",str);
+	char *str1 = get_next_line_bonus(fd);
+	printf("%s",str1);
+	
+	// while (line)
+	// {
+	// 	printf("%s", line);
+	// 	free(line);
+	// 	line = NULL;
+	// 	line = get_next_line_bonus(fd);
+	// }
 	close (fd);
 	// fd = open("text.txt", O_RDONLY);
 	// line = get_next_line_bonus(fd);
 	// printf("%s", line);
 	// 	free(line);
-	// // fd = open("file2.txt", O_RDONLY);
+	// fd = open("file2.txt", O_RDONLY);
 	// line = get_next_line_bonus(fd);
 	// printf("%s", line);
 	// 	free(line);
