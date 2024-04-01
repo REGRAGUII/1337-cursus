@@ -1,5 +1,0 @@
-1 Similarly, 
-2 it is possible and well-advised to use the static keyword when declaring functions that we only use in a single file of a program.
-3 Otherwise, the compiler thinks by default that the declared functions are extern and will have to be linked to other files. 
-4 Using the static keyword is a simple security measure for a program. 
-5 It might even speed up compilation in some cases.

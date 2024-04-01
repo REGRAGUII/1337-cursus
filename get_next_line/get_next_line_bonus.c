@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 02:43:00 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/31 18:29:32 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:35:30 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 static int	ft_new_line(char *s)
 {
 	int	x;
-	
+
 	x = 0;
-	while(s && s[x])
+	while (s && s[x])
 	{
 		if (s[x] == '\n')
-			  return (x);
+			return (x);
 		x++;
 	}
 	return (-1);
@@ -28,8 +28,8 @@ static int	ft_new_line(char *s)
 
 static char	*ft_rest(char *str)
 {
-	char *tmp;
-	int	x;
+	char	*tmp;
+	int		x;
 
 	if (!str)
 		return (NULL);
@@ -50,33 +50,33 @@ static char	*ft_line(char *str)
 	char	*line;
 	int		x;
 	int		check;
-	
+
 	x = 0;
 	if (ft_strlen(str) <= 0)
 		return (NULL);
 	check = ft_new_line(str);
-	if ( check == -1)
+	if (check == -1)
 	{
 		line = ft_strdup(str);
 		return (line);
 	}
 	line = malloc(sizeof(char) * check + 2);
-	if  (!line)
+	if (!line)
 		return (NULL);
-	while (str[x]!= '\n')
+	while (str[x] != '\n')
 	{
 		line[x] = str[x];
 		x++;
 	}
 	line[x] = '\n';
-	line[x+1] = '\0';
+	line[x + 1] = '\0';
 	return (line);
 }
 
 static char	*ft_read(int fd, char *str, char *buff)
 {
-	char *temp;
-	int	x;
+	char	*temp;
+	int		x;
 
 	x = 1;
 	while (x > 0 && ft_new_line(str) == -1)
@@ -90,11 +90,11 @@ static char	*ft_read(int fd, char *str, char *buff)
 			str = temp;
 		}
 	}
-	free (buff);
+	free(buff);
 	buff = NULL;
 	if (x == -1)
 	{
-		free (str);
+		free(str);
 		return (NULL);
 	}
 	return (str);
@@ -103,52 +103,16 @@ static char	*ft_read(int fd, char *str, char *buff)
 char	*get_next_line_bonus(int fd)
 {
 	static char	*str[OPEN_MAX];
-	char	*line;
-	char	*buff;
+	char		*line;
+	char		*buff;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = (char *)malloc(BUFFER_SIZE + 1);
+	buff = (char *)malloc((size_t)BUFFER_SIZE + 1);
 	if (!buff)
 		return (NULL);
 	str[fd] = ft_read(fd, str[fd], buff);
 	line = ft_line(str[fd]);
 	str[fd] = ft_rest(str[fd]);
 	return (line);
-	
 }
-
-#include	<stdio.h>
-int main()
-{
-	int	fd;
-	char *line;
-
-	
-	fd = open("mac.txt", O_RDONLY);
-	line = get_next_line_bonus(fd);
-	printf("%s",line);
-
-	char *str = get_next_line_bonus(fd);
-	printf("%s",str);
-	char *str1 = get_next_line_bonus(fd);
-	printf("%s",str1);
-	
-	// while (line)
-	// {
-	// 	printf("%s", line);
-	// 	free(line);
-	// 	line = NULL;
-	// 	line = get_next_line_bonus(fd);
-	// }
-	close (fd);
-	// fd = open("text.txt", O_RDONLY);
-	// line = get_next_line_bonus(fd);
-	// printf("%s", line);
-	// 	free(line);
-	// fd = open("file2.txt", O_RDONLY);
-	// line = get_next_line_bonus(fd);
-	// printf("%s", line);
-	// 	free(line);
-}
-

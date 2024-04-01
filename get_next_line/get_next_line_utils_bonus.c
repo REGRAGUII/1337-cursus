@@ -6,17 +6,18 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:12:54 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/24 00:26:48 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/03/31 23:51:32 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-size_t ft_strlen(const char *c)
+#include "get_next_line_bonus.h"
+
+size_t	ft_strlen(char *c)
 {
 	size_t	i;
-	
+
 	i = 0;
-	while(c && c[i])
+	while (c && c[i])
 		i++;
 	return (i);
 }
@@ -27,15 +28,14 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*str;
 	size_t	len1;
 	size_t	len2;
-	
+
 	str = NULL;
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	i = 0;
-	
 	if (s1 || s2)
 	{
-		str = malloc(sizeof(char) * (len1 +len2) + 1);
+		str = malloc(sizeof(char) * (len1 + len2) + 1);
 		if (!str)
 			return (NULL);
 		while (i < len1)
@@ -51,13 +51,14 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (str);
 }
 
-char *ft_strdup(char *s)
+char	*ft_strdup(char *s)
 {
 	char	*x;
 	int		i;
-	
+
 	i = 0;
-	if (!(x = malloc(sizeof(char) * ft_strlen(s) + 1)))
+	x = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!x)
 		return (NULL);
 	while (s[i])
 	{

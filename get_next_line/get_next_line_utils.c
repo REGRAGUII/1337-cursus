@@ -6,13 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:36:58 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/22 00:07:54 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/03/31 23:51:35 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *c)
+size_t	ft_strlen(char *c)
 {
 	size_t	i;
 
@@ -24,10 +24,10 @@ size_t	ft_strlen(const char *c)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t		i;
+	size_t	i;
 	char	*str;
-	size_t		len1;
-	size_t		len2;
+	size_t	len1;
+	size_t	len2;
 
 	str = NULL;
 	len1 = ft_strlen(s1);
@@ -35,7 +35,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = 0;
 	if (s1 || s2)
 	{
-		str = malloc(sizeof(char) * (len1 + len2)+1);
+		str = malloc(sizeof(char) * (len1 + len2) + 1);
 		if (!str)
 			return (NULL);
 		while (i < len1)
@@ -46,18 +46,19 @@ char	*ft_strjoin(char *s1, char *s2)
 		len2 = 0;
 		while (i < (len1 + ft_strlen(s2)))
 			str[i++] = s2[len2++];
-		str[len1+ft_strlen(s2)] = '\0';
+		str[len1 + ft_strlen(s2)] = '\0';
 	}
 	return (str);
 }
 
-char *ft_strdup(char *s)
+char	*ft_strdup(char *s)
 {
-	char *x;
-	int	i;
+	char	*x;
+	int		i;
 
 	i = 0;
-	if(!(x = malloc (sizeof(char) * ft_strlen(s) + 1)))
+	x = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!x)
 		return (0);
 	while (s[i])
 	{

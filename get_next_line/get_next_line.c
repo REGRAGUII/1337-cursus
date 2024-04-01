@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:16:37 by yregragu          #+#    #+#             */
-/*   Updated: 2024/03/30 18:21:55 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:34:47 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ static char	*ft_rest(char *str)
 	if (x != -1)
 	{
 		tmp = ft_strdup(str + x + 1);
-		free (str);
+		free(str);
 		str = tmp;
 		return (str);
 	}
-	free (str);
+	free(str);
 	return (NULL);
 }
 
@@ -50,9 +50,9 @@ static char	*ft_line(char *str)
 	char	*line;
 	int		x;
 	int		check;
-	
+
 	x = 0;
-	if(ft_strlen(str) <= 0)
+	if (ft_strlen(str) <= 0)
 		return (NULL);
 	check = ft_new_line(str);
 	if (check == -1)
@@ -69,11 +69,11 @@ static char	*ft_line(char *str)
 		x++;
 	}
 	line[x] = '\n';
-	line[x+1] = '\0';
+	line[x + 1] = '\0';
 	return (line);
 }
 
-static char	*ft_read(int fd, char* str, char *buff)
+static char	*ft_read(int fd, char *str, char *buff)
 {
 	char	*temp;
 	int		x;
@@ -86,49 +86,33 @@ static char	*ft_read(int fd, char* str, char *buff)
 		{
 			buff[x] = '\0';
 			temp = ft_strjoin(str, buff);
-			free(str); 
+			free(str);
 			str = temp;
-		}             
-	}        
-	free (buff);
+		}
+	}
+	free(buff);
 	buff = NULL;
 	if (x == -1)
 	{
-		free (str);
+		free(str);
 		return (NULL);
 	}
 	return (str);
 }
 
 char	*get_next_line(int fd)
-{ 
+{
 	static char	*str;
-	char	*line;
-	char	*buff;
+	char		*line;
+	char		*buff;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = (char *)malloc(BUFFER_SIZE + 1);
+	buff = (char *)malloc((size_t)BUFFER_SIZE + 1);
 	if (!buff)
 		return (NULL);
 	str = ft_read(fd, str, buff);
-	line = ft_line(str);			
+	line = ft_line(str);
 	str = ft_rest(str);
 	return (line);
 }
-
-
-// int main()
-// {
-
-// 	int fd = open("text.txt", O_RDONLY);
-// 	char *line;
-// 	line = get_next_line(fd);
-// 	while (line)
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 		line = get_next_line(fd);
-// 	}
-// 	close(fd);
-// }
